@@ -1,0 +1,38 @@
+
+entity Track {
+	name String,
+    rating Double,
+    url String,
+    popularity String,
+    thumbnail String,
+    createdAt ZonedDateTime,
+    released ZonedDateTime,
+    duration Integer,
+    color String
+}
+
+entity Playlist {
+	name String,
+    collaborative Boolean,
+    description TextBlob,
+    primaryColor String,
+    cover String,
+    thumbnail String,
+    publicAccessible Boolean,
+    numberSongs Integer,
+    followers Integer,
+    rating Double
+}
+
+
+relationship ManyToMany {
+	Playlist{track(name)} to Track{playlist(name)}
+}
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+service Track, Playlist with serviceImpl
+
+paginate Track with infinite-scroll
+paginate Playlist with pagination

@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="track">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.track.detail.title">Track</span> {{ track.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.track.name">Name</span></dt>
+                <dd>
+                    <span>{{ track.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.track.rating">Rating</span></dt>
+                <dd>
+                    <span>{{ track.rating }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.track.url">Url</span></dt>
+                <dd>
+                    <span>{{ track.url }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.track.popularity">Popularity</span></dt>
+                <dd>
+                    <span>{{ track.popularity }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.track.thumbnail">Thumbnail</span></dt>
+                <dd>
+                    <span>{{ track.thumbnail }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.track.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ track.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.track.released">Released</span></dt>
+                <dd>
+                    <span>{{ track.released }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.track.duration">Duration</span></dt>
+                <dd>
+                    <span>{{ track.duration }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.track.color">Color</span></dt>
+                <dd>
+                    <span>{{ track.color }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/track', track.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
